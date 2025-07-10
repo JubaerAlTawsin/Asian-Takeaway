@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asian Takeaway</title>
+  <link rel="icon" href="image/fabicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet'>
+  <style>
+     * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    header, footer {
+      background-color: #8B0000;
+      color: white;
+    }
+    .navbar .container {
+      flex-wrap: nowrap;
+    }
+    .lang-switch {
+      margin-left: 1rem;
+    }
+    .navbar-brand img {
+      height: 60px;
+      margin-right: 10px;
+    }
+     .hero-img {
+    filter: brightness(70%);
+    transition: transform 0.33s ease-in-out;
+  }
+
+  .carousel-item:hover .hero-img {
+    transform: scale(1.02);
+  }
+
+  .carousel-caption h1, .carousel-caption p {
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+  }
+  .carousel-caption h1 {
+    font-family: 'Playfair Display', serif;
+  }
+  h3{
+    font-weight: 600;
+  }
+    /* .boxed img {
+      border: 1px dashed rgba(0, 0, 0, 0.4);
+    } */
+    .product img {
+      width: 100%;
+      border-radius: 5px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    #moreProducts {
+      display: none;
+    }
+    footer a, footer p {
+      color: white;
+    }
+    footer img {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    .social-icons a {
+      color: white;
+      font-size: 1.2rem;
+      margin-right: 15px;
+    }
+    .copyright {
+      font-size: 12px;
+    }
+  </style>
+
+</head>
+<body class="boxed">
+  <header class="position-relative">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="image/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          <div class="lang-switch">
+            <select onchange="changeLang(this.value)" class="form-select">
+              <option value="en">English</option>
+              <option value="de">Deutsch</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+   <section id="hero" class="hero-carousel carousel slide container-fluid px-0" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="position-relative">
+    <!-- Welcome Message Fixed on Top -->
+    <div class="carousel-caption d-none d-md-block position-absolute top-50 start-50 translate-middle text-center" style="z-index: 10;">
+      <div>
+        <h1 class="display-5 mb-3">Welcome to <br>Asian Takeaway</h1>
+        <p class="mb-0">We provide 100% authentic Asian products. Fresh, flavorful and original!</p>
+      </div>
+    </div>
+
+    <!-- Carousel Images -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="image/hero1.jpg" class="d-block w-100 hero-img img-fluid" alt="Sushi">
+      </div>
+      <div class="carousel-item">
+        <img src="image/hero2.jpg" class="d-block w-100 hero-img img-fluid" alt="Momos">
+      </div>
+      <div class="carousel-item">
+        <img src="image/hero3.jpg" class="d-block w-100 hero-img img-fluid" alt="Samosa">
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+    <!-- Products Section -->
+    <section id="products" class="container my-5">
+      <h3 class="text-center mb-5" data-en="Our Products" data-de="Unsere Produkte">Our Products</h3>
+      <div class="row g-4">
+        <div class="row">
+    <!-- First 8 visible products -->
+    <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/sushi.jpg" alt="Sushi">
+          <p class="text-center mt-2">Sushi</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/curry.jpg" alt="Curry">
+          <p class="text-center mt-2">Curry</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/coffee.jpg" alt="Coffee">
+          <p class="text-center mt-2">Coffee</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/samosa.jpg" alt="Samosa">
+          <p class="text-center mt-2">Samosa</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/momos.jpg" alt="Momos">
+          <p class="text-center mt-2">Momos</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/ice-cream.jpg" alt="Ice Cream">
+          <p class="text-center mt-2">Ice Cream</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/cold-drinks.jpg" alt="Cold Drinks">
+          <p class="text-center mt-2">Cold Drinks</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/chips.jpg" alt="Chips">
+          <p class="text-center mt-2">Chips</p>
+        </div>
+  </div>
+
+  <!-- Hidden Products Section -->
+  <div id="moreProducts" class="row">
+   <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/noodles.jpg" alt="Noodles">
+          <p class="text-center mt-2">Noodles</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/tea.jpg" alt="Tea">
+          <p class="text-center mt-2">Tea</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/roll.jpg" alt="Spring Roll">
+          <p class="text-center mt-2">Spring Roll</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product">
+          <img src="image/dessert.jpg" alt="Dessert">
+          <p class="text-center mt-2">Dessert</p>
+        </div>
+      </div>
+
+      <!-- See More Button -->
+  <div class="text-center mt-4">
+    <button class="btn btn-danger" onclick="showMore()">See More</button>
+  </div>
+</div>
+
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="container my-5">
+      <h3 class="text-center mb-4" data-en="Contact Us" data-de="Kontaktieren Sie uns">Contact Us</h3>
+      <form>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Your Name">
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" placeholder="Your Email">
+          </div>
+        </div>
+        <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+        <button class="btn btn-danger">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <a href="index.html">
+            <img src="image/logo.png" alt="Logo">
+          </a>
+          <p>Email: info@asiantakeaway.ch</p>
+          <p>Phone: +41 77 952 74 77</p>
+          <p>Address: Pflanzschulstrasse 15, 8004 Zurich, Switzerland</p>
+
+          <div class="mt-3 social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <h5>Location</h5>
+          <iframe src="https://www.google.com/maps?q=Pflanzschulstrasse+15,+8004+Zurich,+Switzerland&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          
+        </div>
+      </div>
+    </div>
+
+  <div class=" container text-white text-center py-1 mt-2">
+  <p class="mb-0 copyright">&copy; 2025 by <strong>Jubaer Al Tawsin</strong>. All rights reserved.</p>
+  </div>
+
+  </footer>
+
+  <script>
+    function changeLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+     function showMore() {
+    document.getElementById('moreProducts').style.display = 'flex';
+    event.target.style.display = 'none';
+  }
+  </script>
+
+  <!-- <script>
+  window.onload = function () {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
+</script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
